@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\API\BlogController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,15 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/blog', function (Request $request) {
 
-    return '
-        [
-            {"Titre":"Ansible","Description":"Deploy Api laravel & React App with powerfull Ansible"}
-        ],
-        [
-            {"Titre":"Lab","Description":"This lab can be download here : https://github.com/Nico-Dobrowolski/ansible.git"}
-        ]
-    
-    ';
-});
+Route::apiResource("blog", BlogController::class); // Les routes "users.*" de l'API
